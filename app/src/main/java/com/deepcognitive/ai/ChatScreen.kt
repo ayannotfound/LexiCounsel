@@ -71,9 +71,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import androidx.navigation.testing.TestNavHostController
-import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -128,7 +125,7 @@ fun ChatBubble(message: ChatMessage) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ChatScreen(navController: NavController) {
+fun ChatScreen() {
     val context = LocalContext.current
     val dataStoreManager = remember { DataStoreManager(context) }
     val coroutineScope = rememberCoroutineScope()
@@ -259,21 +256,25 @@ fun ChatScreen(navController: NavController) {
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
+                        // Show logo in navbar if chat has started
                         if (hasStartedChat) {
                             Image(
-                                painter = painterResource(id = R.drawable.logo),
+                                painter = painterResource(id = R.drawable.deepcognitive_text),
                                 contentDescription = "Logo",
                                 modifier = Modifier
-                                    .size(32.dp)
+                                    .size(320.dp)
                                     .clip(CircleShape)
                             )
                         }
-                        Text("Chat")
+                        if (!hasStartedChat) {
+                            Text("Chat")
+                        }
+
                     }
                 },
                 navigationIcon = {
-                    IconButton(onClick = { navController.navigate("dashboard") }) {
-                        Icon(Icons.Filled.Menu, contentDescription = "Go to Dashboard")
+                    IconButton(onClick = { isDialogOpen = true }) {
+                        Icon(Icons.Filled.Menu, contentDescription = "Menu")
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -613,6 +614,5 @@ fun ChatScreen(navController: NavController) {
 @Preview(showBackground = true)
 @Composable
 fun ChatScreenPreview() {
-    val navController = TestNavHostController(LocalContext.current)
-    ChatScreen(navController = navController)
+    ChatScreen()
 }

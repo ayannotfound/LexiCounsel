@@ -11,19 +11,14 @@ import androidx.compose.ui.Modifier
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.deepcognitive.ai.ui.theme.DeepCognitiveTheme
-import androidx.navigation.compose.rememberNavController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             DeepCognitiveTheme {
-                val navController = rememberNavController()
-                NavHost(navController = navController, startDestination = "chat") {
-                    composable("chat") { ChatScreen(navController) }
-                    composable("dashboard") { DashboardScreen(navController) }
+                Surface(modifier = Modifier.fillMaxSize()) {
+                    ChatScreen()
                 }
             }
         }

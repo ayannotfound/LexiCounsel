@@ -58,9 +58,6 @@ dependencies {
     // Room (Database)
     implementation("androidx.room:room-runtime:2.6.1")
     implementation(libs.androidx.datastore.preferences.core.jvm)
-    implementation(libs.androidx.navigation.runtime.ktx)
-    implementation(libs.androidx.navigation.testing)
-    implementation(libs.androidx.navigation.compose)
     ksp("androidx.room:room-compiler:2.6.1")
 
     // Retrofit (API Calls)

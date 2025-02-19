@@ -26,7 +26,6 @@ android {
         }
     }
 
-    // ✅ Ensure Java 17 is used
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -47,7 +46,6 @@ android {
 
 
 dependencies {
-    implementation("androidx.compose.material3:material3:1.1.2")
     implementation("androidx.compose.ui:ui-tooling-preview:1.6.0")
     implementation("androidx.compose.material:material-icons-extended:1.6.0")
 
@@ -58,6 +56,7 @@ dependencies {
 
     // Room (Database)
     implementation("androidx.room:room-runtime:2.6.1")
+    implementation(libs.androidx.datastore.preferences.core.jvm)
     ksp("androidx.room:room-compiler:2.6.1")
 
     // Retrofit (API Calls)
@@ -66,13 +65,18 @@ dependencies {
 
     // Coil (Image Loading)
     implementation("io.coil-kt:coil-compose:2.2.2")
-
     // Jetpack Compose
     implementation("androidx.compose.material3:material3:1.1.2")
     implementation("androidx.compose.foundation:foundation:1.5.4")
     implementation("androidx.activity:activity-compose:1.8.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
 
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
 
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
+    implementation ("com.tom-roush:pdfbox-android:2.0.27.0")
+   
 }
 

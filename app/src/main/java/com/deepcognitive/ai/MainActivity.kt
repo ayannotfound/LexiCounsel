@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             DeepCognitiveTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
-                    ChatScreen()
+                    MyApp()
                 }
             }
         }

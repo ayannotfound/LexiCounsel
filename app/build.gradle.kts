@@ -46,7 +46,6 @@ android {
 
 
 dependencies {
-    implementation("androidx.compose.material3:material3:1.1.2")
     implementation("androidx.compose.ui:ui-tooling-preview:1.6.0")
     implementation("androidx.compose.material:material-icons-extended:1.6.0")
 
@@ -75,5 +74,9 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.9.3")
 
     implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
+    implementation ("com.tom-roush:pdfbox-android:2.0.27.0")
+   
 }
 

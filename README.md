@@ -36,7 +36,7 @@ An Android app that connects users to **LexiCounsel**, a smart AI assistant desi
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ayannotfound/Deep_Cognitive.git
+   git clone https://github.com/ayannotfound/LexiCounsel.git
    cd Deep_Cognitive
    ```
 

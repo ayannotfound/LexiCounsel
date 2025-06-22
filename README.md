@@ -51,21 +51,6 @@ An Android app that connects users to **LexiCounsel**, a smart AI assistant desi
 
 ---
 
-## 📁 Project Structure
-
-```
-Deep_Cognitive/
-├── app/
-│   └── src/main/
-│       ├── java/...         # App logic and UI
-│       ├── res/             # UI resources (themes, strings)
-│       └── AndroidManifest.xml
-├── build.gradle.kts
-└── settings.gradle.kts
-```
-
----
-
 ## 📚 What I Learned
 
 - Working with Jetpack Compose and state management  
